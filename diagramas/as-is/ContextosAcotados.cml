@@ -12,57 +12,102 @@ ContextMap {
     PlataformaIntegralContext [C] <- [S] IdentidadAccesoContext
 }
 
-BoundedContext GestionAfiliadosContext implements GestionPartnerships {
-	domainVisionStatement = "Gestión centralizada de relaciones con afiliados, incluyendo seguimiento de comisiones, métricas de rendimiento y comunicación"
+BoundedContext GestionAfiliadosContext implements MarketingAfiliados {
+	domainVisionStatement = "Gestión especializada de programas de marketing de afiliados con seguimiento de performance, comisiones y comunicación"
 }
 
-BoundedContext GestionInfluencersContext implements GestionPartnerships {
-	domainVisionStatement = "Administración de colaboraciones con influencers, campañas, métricas de alcance y gestión de contratos"
+BoundedContext GestionInfluencersContext implements MarketingInfluencers {
+	domainVisionStatement = "Administración integral de colaboraciones con influencers y creadores de contenido, incluyendo campañas, métricas de alcance y gestión de contratos"
 }
 
-BoundedContext GestionCreadorContenidoContext implements GestionPartnerships {
-	domainVisionStatement = "Plataforma para gestionar creadores de contenido, materiales creativos, calendario de publicaciones y análisis de performance"
+BoundedContext GestionCreadorContenidoContext implements MarketingInfluencers {
+	domainVisionStatement = "Plataforma especializada para gestionar creadores de contenido dentro del ecosistema de marketing de influencers, materiales creativos y calendario de publicaciones"
 }
 
-BoundedContext GestionEmbajadoresMarcaContext implements GestionPartnerships {
-	domainVisionStatement = "Sistema para administrar embajadores de marca, programas de lealtad, beneficios y seguimiento de actividades promocionales"
+BoundedContext GestionEmbajadoresMarcaContext implements ProgramasDeLealtad {
+	domainVisionStatement = "Sistema dedicado a administrar embajadores de marca a través de programas de lealtad, beneficios, recompensas y seguimiento de actividades promocionales"
 }
 
-BoundedContext GestionMediosDigitalesContext implements GestionPartnerships {
-	domainVisionStatement = "Gestión de partnerships con medios digitales, pauta publicitaria, métricas de audiencia y optimización de campañas"
+BoundedContext GestionMediosDigitalesContext implements MarketingAfiliados {
+	domainVisionStatement = "Gestión de partnerships con medios digitales incluyendo pauta publicitaria, métricas de audiencia y optimización de campañas"
 }
 
-BoundedContext GestionSociosB2BContext implements GestionPartnerships {
-	domainVisionStatement = "Administración de socios comerciales B2B, acuerdos estratégicos, integraciónes técnicas y revenue sharing"
+BoundedContext GestionSociosB2BContext implements MarketingAfiliados {
+	domainVisionStatement = "Administración de socios comerciales B2B mediante programas de marketing, acuerdos estratégicos, integraciones técnicas y revenue sharing"
 }
 
-BoundedContext PlataformaIntegralContext implements GestionCentralizada, AnalyticsReporting {
-	domainVisionStatement = "Plataforma central que unifica la gestión de todos los tipos de partnerships con dashboards, reportes y análisis consolidados"
+BoundedContext PlataformaIntegralContext implements AnalyticaYReportes, ContratosYOnboarding, AuditoriaYCompliance, GestionDeComisiones, MensajeriaYNotificaciones, ProcesamientoDePagos, MarketplaceDesocios, TrackingYAtribucionMulticanal {
+	domainVisionStatement = "Plataforma central que unifica la gestión integral de partnerships con marketplace de socios, tracking multicanal, análisis consolidados, gestión de contratos, procesamiento de pagos y comunicaciones"
 }
 
-BoundedContext IdentidadAccesoContext implements AutenticacionAutorizacion {
-	domainVisionStatement = "Sistema de gestión de usuarios, roles, permisos y acceso a las diferentes funcionalidades de la plataforma según el tipo de organización"
+BoundedContext IdentidadAccesoContext implements GestionDeIdentidadYAcceso {
+	domainVisionStatement = "Sistema de gestión de identidad y acceso con usuarios, roles y permisos diferenciados según el tipo de partnership y organización"
 }
 
-Domain GestionPartnershipsDom {
+Domain GestionIntegralPartnershipsDom {
 
-	Subdomain GestionPartnerships {
+	Subdomain MarketingAfiliados {
 		type CORE_DOMAIN
-		domainVisionStatement = "Gestión especializada de diferentes tipos de socios estratégicos (afiliados, influencers, creadores, embajadores, medios, B2B)"
+		domainVisionStatement = "Gestión especializada de programas de afiliados con seguimiento de performance y comisiones"
 	}
 	
-	Subdomain GestionCentralizada {
+	Subdomain MarketingInfluencers {
 		type CORE_DOMAIN
-		domainVisionStatement = "Administración unificada de todas las asociaciones estratégicas desde una plataforma integral"
+		domainVisionStatement = "Administración de colaboraciones con influencers, campañas y métricas de alcance"
 	}
 	
-	Subdomain AnalyticsReporting {
+	Subdomain TrackingYAtribucionMulticanal {
 		type CORE_DOMAIN
+		domainVisionStatement = "Seguimiento y atribución de conversiones a través de múltiples canales y touchpoints"
+	}
+	
+	Subdomain MarketplaceDesocios {
+		type CORE_DOMAIN
+		domainVisionStatement = "Plataforma centralizada para descubrir, conectar y gestionar diferentes tipos de socios estratégicos"
+	}
+	
+	Subdomain ProgramasDeLealtad {
+		type CORE_DOMAIN
+		domainVisionStatement = "Gestión de programas de lealtad, beneficios y recompensas para diferentes tipos de partners"
+	}
+	
+	Subdomain GestionDePartners {
+		type CORE_DOMAIN
+		domainVisionStatement = "Administración integral del ciclo de vida de socios comerciales y relaciones estratégicas"
+	}
+	
+	Subdomain AnalyticaYReportes {
+		type SUPPORTING_DOMAIN
 		domainVisionStatement = "Análisis de rendimiento, métricas de partnerships, reportes consolidados y insights para optimización"
 	}
 	
-	Subdomain AutenticacionAutorizacion {
+	Subdomain ContratosYOnboarding {
 		type SUPPORTING_DOMAIN
-		domainVisionStatement = "Gestión de usuarios, roles y permisos de acceso diferenciados según el tipo de partnership y organización"
+		domainVisionStatement = "Gestión de contratos, términos y procesos de incorporación de nuevos partners"
+	}
+	
+	Subdomain AuditoriaYCompliance {
+		type SUPPORTING_DOMAIN
+		domainVisionStatement = "Supervisión, auditoría y cumplimiento normativo de las actividades de partnerships"
+	}
+	
+	Subdomain GestionDeComisiones {
+		type SUPPORTING_DOMAIN
+		domainVisionStatement = "Cálculo, seguimiento y procesamiento de comisiones y pagos a partners"
+	}
+	
+	Subdomain GestionDeIdentidadYAcceso {
+		type GENERIC_SUBDOMAIN
+		domainVisionStatement = "Gestión de usuarios, roles y permisos de acceso diferenciados según el tipo de partnership"
+	}
+	
+	Subdomain MensajeriaYNotificaciones {
+		type GENERIC_SUBDOMAIN
+		domainVisionStatement = "Sistema de comunicaciones, mensajería y notificaciones entre la plataforma y los partners"
+	}
+	
+	Subdomain ProcesamientoDePagos {
+		type GENERIC_SUBDOMAIN
+		domainVisionStatement = "Procesamiento seguro de pagos, transferencias y transacciones financieras"
 	}
 }
