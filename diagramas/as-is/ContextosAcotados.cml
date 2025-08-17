@@ -1,0 +1,68 @@
+ContextMap {
+	type SYSTEM_LANDSCAPE
+	state AS_IS
+	contains GestionAfiliadosContext, GestionInfluencersContext, GestionCreadorContenidoContext, GestionEmbajadoresMarcaContext, GestionMediosDigitalesContext, GestionSociosB2BContext, PlataformaIntegralContext, IdentidadAccesoContext
+	
+	GestionAfiliadosContext -> PlataformaIntegralContext
+	GestionInfluencersContext -> PlataformaIntegralContext
+	GestionCreadorContenidoContext -> PlataformaIntegralContext
+	GestionEmbajadoresMarcaContext -> PlataformaIntegralContext
+	GestionMediosDigitalesContext -> PlataformaIntegralContext
+	GestionSociosB2BContext -> PlataformaIntegralContext
+    PlataformaIntegralContext [C] <- [S] IdentidadAccesoContext
+}
+
+BoundedContext GestionAfiliadosContext implements GestionPartnerships {
+	domainVisionStatement = "Gestión centralizada de relaciones con afiliados, incluyendo seguimiento de comisiones, métricas de rendimiento y comunicación"
+}
+
+BoundedContext GestionInfluencersContext implements GestionPartnerships {
+	domainVisionStatement = "Administración de colaboraciones con influencers, campañas, métricas de alcance y gestión de contratos"
+}
+
+BoundedContext GestionCreadorContenidoContext implements GestionPartnerships {
+	domainVisionStatement = "Plataforma para gestionar creadores de contenido, materiales creativos, calendario de publicaciones y análisis de performance"
+}
+
+BoundedContext GestionEmbajadoresMarcaContext implements GestionPartnerships {
+	domainVisionStatement = "Sistema para administrar embajadores de marca, programas de lealtad, beneficios y seguimiento de actividades promocionales"
+}
+
+BoundedContext GestionMediosDigitalesContext implements GestionPartnerships {
+	domainVisionStatement = "Gestión de partnerships con medios digitales, pauta publicitaria, métricas de audiencia y optimización de campañas"
+}
+
+BoundedContext GestionSociosB2BContext implements GestionPartnerships {
+	domainVisionStatement = "Administración de socios comerciales B2B, acuerdos estratégicos, integraciónes técnicas y revenue sharing"
+}
+
+BoundedContext PlataformaIntegralContext implements GestionCentralizada, AnalyticsReporting {
+	domainVisionStatement = "Plataforma central que unifica la gestión de todos los tipos de partnerships con dashboards, reportes y análisis consolidados"
+}
+
+BoundedContext IdentidadAccesoContext implements AutenticacionAutorizacion {
+	domainVisionStatement = "Sistema de gestión de usuarios, roles, permisos y acceso a las diferentes funcionalidades de la plataforma según el tipo de organización"
+}
+
+Domain GestionPartnershipsDom {
+
+	Subdomain GestionPartnerships {
+		type CORE_DOMAIN
+		domainVisionStatement = "Gestión especializada de diferentes tipos de socios estratégicos (afiliados, influencers, creadores, embajadores, medios, B2B)"
+	}
+	
+	Subdomain GestionCentralizada {
+		type CORE_DOMAIN
+		domainVisionStatement = "Administración unificada de todas las asociaciones estratégicas desde una plataforma integral"
+	}
+	
+	Subdomain AnalyticsReporting {
+		type CORE_DOMAIN
+		domainVisionStatement = "Análisis de rendimiento, métricas de partnerships, reportes consolidados y insights para optimización"
+	}
+	
+	Subdomain AutenticacionAutorizacion {
+		type SUPPORTING_DOMAIN
+		domainVisionStatement = "Gestión de usuarios, roles y permisos de acceso diferenciados según el tipo de partnership y organización"
+	}
+}

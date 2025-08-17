@@ -1,0 +1,164 @@
+Domain Gestion_integral_de_partnerships {
+  Subdomain MarketingDeAfiliados { type = CORE_DOMAIN }
+  Subdomain MotorDeTrackingAtribucionMulticanal { type = CORE_DOMAIN }
+  Subdomain MarketplaceDeSociosAfiliados { type = CORE_DOMAIN }
+  Subdomain ProgramasDeLealtadAdvocacy { type = CORE_DOMAIN }
+  Subdomain AnaliticaReportes { type = SUPPORTING_DOMAIN }
+  Subdomain ContratosOnboarding { type = SUPPORTING_DOMAIN }
+  Subdomain AuditoriaYCumplimientoNormativo { type = SUPPORTING_DOMAIN }
+  Subdomain GestionDeComisiones { type = SUPPORTING_DOMAIN }
+  Subdomain GestionDeIdentidadYAcceso { type = GENERIC_SUBDOMAIN }
+  Subdomain MensajeriaNotificaciones { type = GENERIC_SUBDOMAIN }
+  Subdomain ProcesamientoDePagos { type = GENERIC_SUBDOMAIN }
+  Subdomain MarketingDePartners { type = CORE_DOMAIN }
+}
+
+
+BoundedContext IAMContext implements GestionDeIdentidadYAcceso {
+  type = FEATURE
+  domainVisionStatement = "Gestiona la identidad, autenticación y acceso seguro de todos los actores del sistema."
+}
+BoundedContext MarketplaceContext implements MarketplaceDeSociosAfiliados {
+  type = FEATURE
+  domainVisionStatement = "Permite a las marcas descubrir, conectar y reclutar nuevos socios estratégicos."
+}
+BoundedContext GestionProgramasAfiliacionContext implements MarketingDeAfiliados {
+  type = FEATURE
+  domainVisionStatement = "Orquesta el proceso de afiliación inicial de un nuevo socio."
+}
+BoundedContext GestionDeAfiliadosContext implements MarketingDeAfiliados {
+  type = FEATURE
+  domainVisionStatement = "Administra la relación y las campañas con los afiliados existentes."
+}
+BoundedContext InfluencersContext implements MarketingDePartners {
+  type = FEATURE
+  domainVisionStatement = "Maneja la información y perfiles de los influencers."
+}
+BoundedContext ComplianceContext implements AuditoriaYCumplimientoNormativo {
+  type = FEATURE
+  domainVisionStatement = "Asegura que todas las operaciones y contratos cumplan con las normativas vigentes."
+}
+BoundedContext ContenidoContext implements MarketingDePartners {
+  type = FEATURE
+  domainVisionStatement = "Gestiona el contenido generado por los partners para las campañas."
+}
+BoundedContext TrackingInfluencersContext implements MotorDeTrackingAtribucionMulticanal {
+  type = FEATURE
+  domainVisionStatement = "Realiza el seguimiento del rendimiento y las interacciones generadas por influencers."
+}
+BoundedContext TrackingAfiliacionesContext implements MotorDeTrackingAtribucionMulticanal {
+  type = FEATURE
+  domainVisionStatement = "Realiza el seguimiento de clics, conversiones y eventos de los programas de afiliados."
+}
+BoundedContext TrackingRecomendacionesContext implements MotorDeTrackingAtribucionMulticanal {
+  type = FEATURE
+  domainVisionStatement = "Rastrea las conversiones y acciones derivadas de los programas de lealtad y referidos."
+}
+BoundedContext TrackingReportesContext implements MotorDeTrackingAtribucionMulticanal {
+  type = FEATURE
+  domainVisionStatement = "Agrega datos de tracking para ser consumidos por el sistema de analítica."
+}
+BoundedContext AtribucionContext implements MotorDeTrackingAtribucionMulticanal {
+  type = FEATURE
+  domainVisionStatement = "Aplica modelos de atribución para asignar el crédito de las conversiones a los diferentes puntos de contacto."
+}
+BoundedContext GestionDeEmbajadoresContext implements ProgramasDeLealtadAdvocacy {
+  type = FEATURE
+  domainVisionStatement = "Administra los programas de embajadores y defensores de marca."
+}
+BoundedContext RecomendacionesContext implements ProgramasDeLealtadAdvocacy {
+  type = FEATURE
+  domainVisionStatement = "Gestiona la lógica y las reglas para las recomendaciones y referidos."
+}
+BoundedContext ReportesContext implements AnaliticaReportes {
+  type = FEATURE
+  domainVisionStatement = "Genera y presenta reportes y dashboards sobre el rendimiento de las campañas."
+}
+BoundedContext OptimizacionContext implements AnaliticaReportes {
+  type = FEATURE
+  domainVisionStatement = "Provee insights y sugerencias para optimizar el rendimiento de las asociaciones."
+}
+BoundedContext ComisionesContext implements GestionDeComisiones {
+  type = FEATURE
+  domainVisionStatement = "Mide y calcula las comisiones basadas en las conversiones atribuidas."
+}
+BoundedContext AuditoriaAntifraudeContext implements AuditoriaYCumplimientoNormativo {
+  type = FEATURE
+  domainVisionStatement = "Detecta y previene actividades fraudulentas en las campañas."
+}
+BoundedContext GestionCampanasContext implements MarketingDePartners {
+  type = FEATURE
+  domainVisionStatement = "Gestiona la creación, ejecución y seguimiento de campañas de marketing con partners."
+}
+BoundedContext ContratosAutomatizadosContext implements ContratosOnboarding {
+  type = FEATURE
+  domainVisionStatement = "Automatiza la creación y gestión de contratos con los socios."
+}
+BoundedContext OnboardingContext implements ContratosOnboarding {
+  type = FEATURE
+  domainVisionStatement = "Gestiona el proceso de incorporación de nuevos socios a la plataforma."
+}
+BoundedContext PagosContext implements ProcesamientoDePagos {
+  type = FEATURE
+  domainVisionStatement = "Procesa y ejecuta los pagos de comisiones a los socios."
+}
+BoundedContext NotificacionesContext implements MensajeriaNotificaciones {
+  type = FEATURE
+  domainVisionStatement = "Envía notificaciones transaccionales a usuarios y socios (ej. pago recibido, nuevo contrato)."
+}
+
+
+ContextMap PartnershipsContextMap {
+  type = SYSTEM_LANDSCAPE
+  state = TO_BE
+
+  contains IAMContext
+  contains MarketplaceContext
+  contains GestionDeAfiliadosContext
+  contains GestionProgramasAfiliacionContext
+  contains GestionDeEmbajadoresContext
+  contains RecomendacionesContext
+  contains AuditoriaAntifraudeContext
+  contains PagosContext
+  contains NotificacionesContext
+  contains ContratosAutomatizadosContext
+  contains OnboardingContext
+  contains ReportesContext
+  contains OptimizacionContext
+  contains ContenidoContext
+  contains InfluencersContext
+  contains TrackingAfiliacionesContext
+  contains TrackingRecomendacionesContext
+  contains TrackingInfluencersContext
+  contains AtribucionContext
+  contains TrackingReportesContext
+  contains ComplianceContext
+  contains ComisionesContext
+  contains GestionCampanasContext
+
+  GestionDeAfiliadosContext [D, ACL] <- [U, OHS] IAMContext
+  InfluencersContext [D, ACL] <- [U, OHS] IAMContext
+  GestionDeEmbajadoresContext [D, ACL] <- [U, OHS] IAMContext
+  InfluencersContext [P] <-> [P] GestionCampanasContext
+  MarketplaceContext [D, ACL] <- [U] InfluencersContext
+  GestionCampanasContext [D, ACL] <- [U] ContenidoContext
+  TrackingInfluencersContext [D, ACL] <- [U] ContenidoContext
+  MarketplaceContext [D, ACL] <- [U] GestionDeAfiliadosContext
+  GestionProgramasAfiliacionContext [P] <-> [P] GestionDeAfiliadosContext
+  TrackingAfiliacionesContext [D, ACL] <- [U] GestionProgramasAfiliacionContext
+  OnboardingContext [P] <-> [P] GestionProgramasAfiliacionContext
+  GestionDeEmbajadoresContext [P] <-> [P] RecomendacionesContext
+  TrackingRecomendacionesContext [D, ACL] <- [U] RecomendacionesContext
+  AtribucionContext [D, ACL] <- [U] TrackingInfluencersContext
+  AtribucionContext [D, ACL] <- [U] TrackingRecomendacionesContext
+  TrackingReportesContext [D, ACL] <- [U] TrackingInfluencersContext
+  AuditoriaAntifraudeContext [D] <- [U, OHS] AtribucionContext
+  ReportesContext [D] <- [U, OHS] TrackingReportesContext
+  OptimizacionContext [D, ACL] <- [U] ReportesContext
+  ComisionesContext [D, ACL] <- [U, OHS] AuditoriaAntifraudeContext
+  PagosContext [D] <- [U, OHS] ComisionesContext
+  NotificacionesContext [U, OHS] -> [D] PagosContext
+  ComisionesContext [P] <-> [P] ContratosAutomatizadosContext
+  ContratosAutomatizadosContext [P] <-> [P] ComplianceContext
+  PagosContext [U, OHS] -> [D] ComplianceContext
+}
