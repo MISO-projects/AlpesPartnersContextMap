@@ -1,3 +1,6 @@
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&repo=MISO-projects/AlpesPartnersContextMap)
+
 # Diseño y Construcción de Soluciones No Monoliticas
 
 ## Nombre del Equipo

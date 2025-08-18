@@ -1,0 +1,68 @@
+Domain GestionIntegralPartnershipsDom {
+  Subdomain MarketingAfiliados {
+    type CORE_DOMAIN
+    domainVisionStatement = "Gestión especializada de programas de afiliados con seguimiento de performance y comisiones"
+  }
+
+  Subdomain MarketingInfluencers {
+    type CORE_DOMAIN
+    domainVisionStatement = "Administración de colaboraciones con influencers, campañas y métricas de alcance"
+  }
+
+  Subdomain TrackingYAtribucionMulticanal {
+    type CORE_DOMAIN
+    domainVisionStatement = "Seguimiento y atribución de conversiones a través de múltiples canales y touchpoints"
+  }
+
+  Subdomain MarketplaceDesocios {
+    type CORE_DOMAIN
+    domainVisionStatement = "Plataforma centralizada para descubrir, conectar y gestionar diferentes tipos de socios estratégicos"
+  }
+
+  Subdomain ProgramasDeLealtad {
+    type CORE_DOMAIN
+    domainVisionStatement = "Gestión de programas de lealtad, beneficios y recompensas para diferentes tipos de partners"
+  }
+
+  Subdomain GestionDePartners {
+    type CORE_DOMAIN
+    domainVisionStatement = "Administración integral del ciclo de vida de socios comerciales y relaciones estratégicas"
+  }
+
+  Subdomain AnalyticaYReportes {
+    type SUPPORTING_DOMAIN
+    domainVisionStatement = "Análisis de rendimiento, métricas de partnerships, reportes consolidados y insights para optimización"
+  }
+
+  Subdomain ContratosYOnboarding {
+    type SUPPORTING_DOMAIN
+    domainVisionStatement = "Gestión de contratos, términos y procesos de incorporación de nuevos partners"
+  }
+
+  Subdomain AuditoriaYCompliance {
+    type SUPPORTING_DOMAIN
+    domainVisionStatement = "Supervisión, auditoría y cumplimiento normativo de las actividades de partnerships"
+  }
+
+  Subdomain GestionDeComisiones {
+    type SUPPORTING_DOMAIN
+    domainVisionStatement = "Cálculo, seguimiento y procesamiento de comisiones y pagos a partners"
+  }
+
+  Subdomain GestionDeIdentidadYAcceso {
+    type GENERIC_SUBDOMAIN
+    domainVisionStatement = "Gestión de usuarios, roles y permisos de acceso diferenciados según el tipo de partnership"
+  }
+
+  Subdomain MensajeriaYNotificaciones {
+    type GENERIC_SUBDOMAIN
+    domainVisionStatement = "Sistema de comunicaciones, mensajería y notificaciones entre la plataforma y los partners"
+  }
+
+  Subdomain ProcesamientoDePagos {
+    type GENERIC_SUBDOMAIN
+    domainVisionStatement = "Procesamiento seguro de pagos, transferencias y transacciones financieras"
+  }
+
+}
+
